@@ -13,7 +13,9 @@ const Category = connection.define('categories', {
 });
 
 
-/*Category.sync({force:true}); Essa linha aqui serve para criar a tabela no banco de dados, depois 
+//Category.sync({force:true}); 
+
+/* Essa linha aqui serve para criar a tabela no banco de dados, depois 
 que for rodada uma vez é bom retirar ou comentar essa linha para o codigo nao ficar tentando criar
 as tabelas toda vez que executar*/ 
 
