@@ -3,6 +3,10 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
 
+//const controllers
+const categoriesController = require("./categories/CategoriesController");
+const articlesController = require("./articles/ArticlesController");
+
 //view engine
 app.set('view engine', 'ejs');
 
@@ -11,7 +15,7 @@ app.use(express.static('public'));
 
 
 //body-parser
-app.use(bodyParser.urlencoded({extend: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 //database
@@ -20,6 +24,10 @@ connection.authenticate().then(() => {
 }).catch((error) => {
     console.log(error);
 })
+
+//rotas controller
+app.use("/", categoriesController);
+app.use("/", articlesController);
 
 //rotas
 app.get("/", (req, res) =>{
