@@ -123,7 +123,7 @@ router.get("/articles/page/:num", (req, res) => {
             res.render("admin/articles/page", {result: result, categories: categories})
         })
 
-        res.json(result);
+        
     })
 })
 
