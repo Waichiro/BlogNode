@@ -22,7 +22,6 @@
                     <th><%= user.id %></th>
                     <th><%= user.email %></th>
                     <th>
-                        <a href="/admin/users/edit/<%= user.id %>" class="btn btn-warning">Editar</a>
                         
                         <form method="post" action="/users/delete" style="display: inline;" onsubmit="confirmarDelecao(event, this)">
                             <input type="hidden" name="id" value="<%= users.id %>">
@@ -46,7 +45,7 @@
 <script>
     function confirmarDelecao(event, form){
         event.preventDefault();
-        var decisao = confirm("Você deseja deletar essa categoria?");
+        var decisao = confirm("Você deseja deletar esse usuario?");
         if(decisao){
             form.submit();
         }
