@@ -6,10 +6,14 @@ const connection = require("./database/database");
 //const controllers
 const categoriesController = require("./categories/CategoriesController");
 const articlesController = require("./articles/ArticlesController");
+const usersController = require("./user/UsersController");
 
 //models importados
 const Article = require("./articles/Article");
 const Category = require("./categories/Category");
+const User = require("./user/User");
+
+
 const router = require("./categories/CategoriesController");
 
 //view engine
@@ -33,6 +37,7 @@ connection.authenticate().then(() => {
 //rotas controller
 app.use("/", categoriesController);
 app.use("/", articlesController);
+app.use("/", usersController);
 
 //rotas
 app.get("/", (req, res) =>{
