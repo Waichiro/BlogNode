@@ -35,6 +35,27 @@ router.post("/articles/save", (req, res) => {
         res.redirect("/admin/articles");
     })
 });
+
+router.post("/articles/delete", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){
+        if(!isNaN(id)){
+
+            Article.destroy({
+                where:{
+                    id: id
+                }
+            }).then(() => {
+                res.redirect("/admin/articles");
+            });
+
+        }else{//Se não for NULL
+            res.redirect("/admin/articles");
+        }
+    }else{// Se for NULL
+        res.redirect("/admin/articles");
+    }
+});
  
 
 
