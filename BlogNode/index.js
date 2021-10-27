@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const connection = require("./database/database");
+const adminAuth = require("./middlewares/adminAuth");
 
 //const controllers
 const categoriesController = require("./categories/CategoriesController");
