@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const connection = require("./database/database");
 const adminAuth = require("./middlewares/adminAuth");
+require('dotenv/config');
+
+console.log(process.env.APP_NAME)
 
 //const controllers
 const categoriesController = require("./categories/CategoriesController");
