@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 
 //session
 app.use(session({
-    secret: "madiwyrfbvxaqesgçhk", cookie: {maxAge: 30000} //É uma tipo uma senha para melhorar a seguranca e o cookie é para 
+    secret: "madiwyrfbvxaqesgçhk", cookie: {maxAge: 30000000} //É uma tipo uma senha para melhorar a seguranca e o cookie é para 
                                                            //dizer o tempo maximo da sessao ate ele deslogar sozinho, ele é feito em
                                                            //milisegundos 1s = 1000
 }))
@@ -47,6 +47,7 @@ connection.authenticate().then(() => {
 app.use("/", categoriesController);
 app.use("/", articlesController);
 app.use("/", usersController);
+
 
 //rotas
 app.get("/", (req, res) =>{
@@ -108,7 +109,7 @@ router.get("/category/:slug", (req, res) =>{
         res.redirect("/");
     })
 
-})
+});
 
 app.listen(8080, () =>{
     console.log("Servidor logado...");
