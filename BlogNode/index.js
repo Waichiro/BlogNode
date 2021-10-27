@@ -5,8 +5,10 @@ const session = require("express-session");
 const connection = require("./database/database");
 const adminAuth = require("./middlewares/adminAuth");
 require('dotenv/config');
+require('dotenv').config({  
+    path: process.env.NODE_ENV === "test" ? ".env.testing" : ".env"
+  })
 
-console.log(process.env.APP_NAME)
 
 //const controllers
 const categoriesController = require("./categories/CategoriesController");

@@ -26,7 +26,7 @@ router.post("/users/create", (req, res) => {
     }).then(user => {
         if(user == undefined){
             //essa parte abaixo é a que encripta com hash a senha do usuario
-            var salt = bcrypt.genSaltSync(10);
+            var salt = bcrypt.genSaltSync(process.env.BC_SALT);
             var hash = bcrypt.hashSync(password, salt);
 
 
