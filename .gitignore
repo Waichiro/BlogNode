@@ -3,3 +3,4 @@ ignore/.env
 
 ignore/node_modules/.bin/ejs
 *.cmd
+.env
